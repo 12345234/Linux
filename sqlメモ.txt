@@ -1,0 +1,27 @@
+//新規スキーマ
+CREATE DATABASE IF NOT EXISTS date_master;
+
+//スキーマの削除
+DROP TABLE IF EXISTS data_master;
+
+//新規テーブル
+CREATE TABLE IF NOT EXISTS students (student_id INT PRIMARY KEY,student_name VARCHAR(255), class_id INT);
+CREATE TABLE IF NOT EXISTS classes (class_id INT PRIMARY KEY,class_name VARCHAR(255));
+
+//テーブル内の変数の型変換(ALTER TABLE students MODIFY)
+ALTER TABLE students MODIFY student_name VARCHAR(255);
+ALTER TABLE classes MODIFY class_name VARCHAR(255);
+
+//テーブル内に要素追加(students)
+insert into students(student_id,student_name,class_id)values(1,'Tanaka',1);
+insert into students(student_id,student_name,class_id)values(2,'Sato',1);
+insert into students(student_id,student_name,class_id)values(3,'Suzuki',2);
+insert into students(student_id,student_name,class_id)values(4,'Kimura',2);
+
+//テーブル内に要素追加(classes)
+insert into classes(class_id,class_name)values(1,'ProgrammerClass');
+insert into classes(class_id,class_name)values(2,'DesignerClass');
+
+
+
+

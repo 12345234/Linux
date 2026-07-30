@@ -1,0 +1,12 @@
+スキーマ、データベース
+CREATE DATABASE IF NOT EXISTS sql_study;
+
+テーブル
+CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY,name VARCHAR(255),level INT,job_id INT);
+CREATE TABLE IF NOT EXISTS battle_log(user_id INT PRIMARY KEY,result_win BOOLEAN,create_date DATE);
+
+
+回答
+1,select * from users where id = 5;
+2,SELECT id,name,level FROM users ORDER BY level DESC LIMIT 3;
+3,
