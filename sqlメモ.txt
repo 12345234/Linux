@@ -21,7 +21,17 @@ insert into students(student_id,student_name,class_id)values(4,'Kimura',2);
 //テーブル内に要素追加(classes)
 insert into classes(class_id,class_name)values(1,'ProgrammerClass');
 insert into classes(class_id,class_name)values(2,'DesignerClass');
+insert into classes(class_id,class_name)values(3,'ItClass');
+insert into classes(class_id,class_name)values(4,'e-SportsClass');
 
 
 
 
+
+  
+  storage:
+    build: ./mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - '10022:22'

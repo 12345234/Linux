@@ -19,7 +19,6 @@
             foreach (array_keys($data[0]) as $column) {
                 echo "<th>" . htmlspecialchars($column) . "</th>";
             }
-            echo "<th>delete</th>";
             echo "</tr></thead>";
             echo "<tbody>";
             foreach ($data as $row) {
@@ -31,6 +30,7 @@
                         echo "<td>" . htmlspecialchars($v) . "</td>";
                     }
                 }
+
                 echo "<td>";
                 echo "<form method=\"post\" action=\"delete_student.php\" style=\"display:inline;\">";
                 echo "<input type=\"hidden\" name=\"student_id\" value=\"" . htmlspecialchars($row['student_id']) . "\">";

@@ -6,6 +6,7 @@ $password = 'ppp';
 $database = 'data_master';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $name = $_POST["name"];
     $class_id = $_POST["class_id"];
 
@@ -21,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8mb4", $username, $password);
+
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql_max_id = "SELECT MAX(student_id) FROM students";
@@ -40,19 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "regist OK <br>";
         echo "Student ID: " . htmlspecialchars($next_student_id) ;
 
-    }
-    catch(PDOException $e)
-    {
+    } catch(PDOException $e) {
         echo "regist FAILE" . $e->getMessage();
-    }
-    finally 
-    {
+    } finally {
         $pdo = null;
     }
 
-} 
-else 
-{
+} else {
     echo "request error";
 }
 ?>
+

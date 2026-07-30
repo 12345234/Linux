@@ -44,21 +44,7 @@ services:
     ports:
       - 2222:2222
     restart: unless-stopped
-  services:
-  web:
-    build: ./docker/web
-    volumes:
-      - ./web:/var/www/html
-      - ./docker/.ssh/test_rsa:/root/.ssh/test_rsa
-    ports:
-      - '80:80'
-  storage:
-    build: ./docker/storage
-    volumes:
-      - ./storage:/storage
-      - ./docker/.ssh/test_rsa.pub:/root/.ssh/authorized_keys
-    ports:
-      - '10022:22'
+
 volumes:
     db_data: {}
 

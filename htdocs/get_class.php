@@ -13,7 +13,7 @@ try{
     if(isset($_GET['class_id'])) {
         $class_id = $_GET['class_id'];
     }
-$stmt = $pdo->query("SELECT * FROM classes where class_id = $class_id");
+    $stmt = $pdo->query("SELECT * FROM classes where class_id = $class_id");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach (array_keys($results[0]) as $v) {
